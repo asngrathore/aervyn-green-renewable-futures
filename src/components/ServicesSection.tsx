@@ -66,7 +66,7 @@ const ServiceCard = ({
         delay: index * 0.15,
         ease: [0.2, 0, 0, 1],
       }}
-      className="group card-surface overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_20px_hsl(var(--glow-green)/0.3),0_0_40px_hsl(var(--glow-green)/0.1)] hover:border-primary/40 hover:bg-gradient-to-b hover:from-card hover:to-primary/[0.04]"
+      className="group card-surface overflow-hidden hover-glow"
     >
       <div className="relative h-48 overflow-hidden">
         <img

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { useRef, useEffect } from "react";
 import { ArrowRight, Zap } from "lucide-react";
 import heroImg from "@/assets/hero-solar.jpg";
 

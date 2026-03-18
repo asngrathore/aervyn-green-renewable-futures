@@ -89,27 +89,11 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="mt-16 flex flex-wrap gap-12"
-          >
-            {[
-              { value: "500+", label: "MW Managed" },
-              { value: "98%", label: "Accuracy Rate" },
-              { value: "150+", label: "Projects Delivered" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div className="font-display font-bold text-3xl text-foreground">
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground text-sm mt-1">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
+          <StatCounter items={[
+              { value: 500, suffix: "+", label: "MW Managed" },
+              { value: 98, suffix: "%", label: "Accuracy Rate" },
+              { value: 150, suffix: "+", label: "Projects Delivered" },
+            ]} />
         </div>
       </div>
 

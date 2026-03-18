@@ -46,6 +46,40 @@ const StatCounter = ({ items }: { items: { value: number; suffix: string; label:
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Animated radial gradient */}
+      <div className="absolute inset-0 z-[1] opacity-[0.15] pointer-events-none">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.8, 1, 0.8],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at 30% 50%, hsl(142 70% 25%) 0%, transparent 60%)",
+          }}
+        />
+        <motion.div
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [1, 0.8, 1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse at 70% 60%, hsl(210 100% 30%) 0%, transparent 60%)",
+          }}
+        />
+      </div>
+
       {/* Background image */}
       <div className="absolute inset-0">
         <img

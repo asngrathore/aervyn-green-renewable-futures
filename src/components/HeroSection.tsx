@@ -3,6 +3,46 @@ import { useRef, useEffect } from "react";
 import { ArrowRight, Zap } from "lucide-react";
 import heroImg from "@/assets/hero-solar.jpg";
 
+const AnimatedNumber = ({ value, suffix }: { value: number; suffix: string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const motionVal = useMotionValue(0);
+  const rounded = useTransform(motionVal, (v) => Math.round(v));
+  const containerRef = useRef(null);
+  const inView = useInView(containerRef, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (inView) {
+      animate(motionVal, value, { duration: 2, ease: [0.22, 1, 0.36, 1] });
+    }
+  }, [inView, motionVal, value]);
+
+  useEffect(() => {
+    return rounded.on("change", (v) => {
+      if (ref.current) ref.current.textContent = `${v}${suffix}`;
+    });
+  }, [rounded, suffix]);
+
+  return <span ref={containerRef}><span ref={ref}>0{suffix}</span></span>;
+};
+
+const StatCounter = ({ items }: { items: { value: number; suffix: string; label: string }[] }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1, delay: 1 }}
+    className="mt-16 flex flex-wrap gap-12"
+  >
+    {items.map((stat) => (
+      <div key={stat.label}>
+        <div className="font-display font-bold text-3xl text-foreground">
+          <AnimatedNumber value={stat.value} suffix={stat.suffix} />
+        </div>
+        <div className="text-muted-foreground text-sm mt-1">{stat.label}</div>
+      </div>
+    ))}
+  </motion.div>
+);
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">

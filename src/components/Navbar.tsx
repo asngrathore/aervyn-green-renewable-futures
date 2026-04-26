@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/aervyn-green-logo.png";
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -31,13 +32,12 @@ const Navbar = () => {
       }`}
     >
       <div className="section-container flex items-center justify-between h-16 lg:h-20">
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="font-display font-bold text-primary-foreground text-sm">A</span>
-          </div>
-          <span className="font-display font-semibold text-foreground text-lg">
-            Aervyn <span className="text-primary">Green</span>
-          </span>
+        <a href="#" className="flex items-center" aria-label="Aervyn Green home">
+          <img
+            src={logo}
+            alt="Aervyn Green logo"
+            className="h-10 lg:h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop */}

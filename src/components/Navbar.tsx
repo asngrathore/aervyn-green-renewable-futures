@@ -36,7 +36,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Aervyn Green logo"
-            className="h-15 lg:h-18 w-auto object-contain"
+            className="h-[3.75rem] lg:h-[4.5rem] w-auto object-contain"
           />
         </a>
 

@@ -133,9 +133,14 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.5, ease: [0.2, 0, 0, 1] }}
             className="mt-6 text-muted-foreground text-lg lg:text-xl leading-relaxed max-w-[55ch]"
           >
-            Aervyn Green delivers precision consulting for solar, wind, and
-            hybrid renewable energy projects—backed by advanced drone
-            thermography and data-driven insights.
+            Aervyn Green is an independent Renewable Energy firm providing
+            end-to-end practical & sustainability driven solutions and support
+            across Solar, Wind, Energy Storage and Grid Integration. We offer to
+            Plan, Develop, and Optimise renewable energy projects that enable a
+            Green and Sustainable Future. With a strong focus on technical
+            excellence, quality standards, and regulatory compliance, we partner
+            with stakeholders to deliver reliable, cost‑effective energy
+            solutions that create long‑term value and environmental impact.
           </motion.p>
 
           <motion.div
@@ -164,7 +169,7 @@ const HeroSection = () => {
 
           {/* Stats row */}
           <StatCounter items={[
-              { value: 500, suffix: "+", label: "MW Managed" },
+              { value: 10, suffix: " GW+", label: "Assets Advised" },
               { value: 98, suffix: "%", label: "Accuracy Rate" },
               { value: 150, suffix: "+", label: "Projects Delivered" },
             ]} />

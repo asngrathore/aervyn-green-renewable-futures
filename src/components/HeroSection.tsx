@@ -170,7 +170,7 @@ const HeroSection = () => {
           {/* Stats row */}
           <StatCounter items={[
               { value: 10, suffix: " GW+", label: "Assets Advised" },
-              { value: 98, suffix: "%", label: "Accuracy Rate" },
+              { value: 10, suffix: "+", label: "Countries Addressed" },
               { value: 150, suffix: "+", label: "Projects Delivered" },
             ]} />
         </div>

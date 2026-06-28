@@ -1,3 +1,5 @@
+import logo from "@/assets/aervyn-green-logo.png";
+
 const footerLinks = {
   Services: [
     "Solar Plant Consulting",
@@ -23,11 +25,11 @@ const Footer = () => (
         {/* Brand */}
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="font-display font-bold text-primary-foreground text-sm">
-                A
-              </span>
-            </div>
+            <img
+              src={logo}
+              alt="Aervyn Green logo"
+              className="h-8 w-auto object-contain"
+            />
             <span className="font-display font-semibold text-foreground text-lg">
               Aervyn <span className="text-primary">Green</span>
             </span>
